@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Now Playing · Four Points Design</title>
+  <meta name="description" content="An interior design project by Carsen Lepine, Four Points Design.">
+  <meta name="theme-color" content="#131112">
+
+  <!-- The preview shown when the link is shared (texts, LinkedIn, email…).
+       og:image needs the full web address: see "Publish on GitHub" in README.md -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Four Points Design">
+  <meta property="og:title" content="Carsen Lepine, Interior Designer · Four Points Design">
+  <meta property="og:description" content="An interior design portfolio presented as a record collection: put an album on the turntable to explore each project.">
+  <meta property="og:image" content="assets/social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A record playing on a turntable beside Carsen Lepine's name">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: Instrument Serif from Google Fonts; Source Sans 3 is in assets/fonts (see style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<!-- ONE page for every project: project.html?id=project-01, ?id=project-02 …
+     The content is filled in by js/project.js from js/data/projects.js. -->
+<body class="page-project theme-light">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-nav></header>
+  <main id="main"></main>
+  <noscript><p style="padding:120px 24px">This page needs JavaScript to show the project. <a href="index.html">Back to the collection</a></p></noscript>
+  <div class="page-veil" data-veil></div>
+  <script type="module" src="js/project.js"></script>
+</body>
+</html>

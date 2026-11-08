@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Four Points Design · Carsen Lepine, Interior Designer</title>
+  <meta name="description" content="The interior design portfolio of Carsen Lepine (Four Points Design), presented as a record collection.">
+  <meta name="theme-color" content="#131112">
+
+  <!-- The preview shown when the link is shared (texts, LinkedIn, email…).
+       og:image needs the full web address: see "Publish on GitHub" in README.md -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Four Points Design">
+  <meta property="og:title" content="Carsen Lepine, Interior Designer · Four Points Design">
+  <meta property="og:description" content="An interior design portfolio presented as a record collection: put an album on the turntable to explore each project.">
+  <meta property="og:image" content="assets/social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A record playing on a turntable beside Carsen Lepine's name">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: Instrument Serif from Google Fonts; Source Sans 3 is in assets/fonts (see style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Tells the browser where "three" lives, so crate.js can write: import * as THREE from "three" -->
+  <script type="importmap">
+    { "imports": { "three": "./js/vendor/three.module.js" } }
+  </script>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="page-home theme-dark">
+  <a class="skip-link" href="#albums">Skip to the album list</a>
+  <header data-nav></header>
+
+  <main id="main" class="home">
+    <!-- The 3D crate is drawn in here (js/crate.js). Everything it does can
+         also be done with the text controls beside it. -->
+    <div class="crate-stage" data-stage aria-hidden="true"></div>
+
+    <div class="home-panel">
+      <div class="home-intro">
+        <p class="caps">Four Points Design · The Collection</p>
+        <h1 class="home-title">Carsen Lepine, <em>interior designer</em></h1>
+      </div>
+
+      <section class="now-browsing" aria-labelledby="nb-heading">
+        <div class="now-browsing__top caps">
+          <span id="nb-heading">Now browsing</span>
+          <span data-counter></span>
+        </div>
+        <div class="swap" data-swap>
+          <p class="now-browsing__meta caps" data-meta></p>
+          <h2 class="now-browsing__title" data-title></h2>
+          <p class="now-browsing__subtitle caps" data-subtitle></p>
+        </div>
+        <div class="now-browsing__controls">
+          <button class="btn btn--solid" type="button" data-play>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+            Play
+          </button>
+          <button class="icon-btn" type="button" data-prev aria-label="Previous album">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
+          </button>
+          <button class="icon-btn" type="button" data-next aria-label="Next album">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-live></p>
+      </section>
+
+      <!-- Shown instead of "Now browsing" while a record is on the turntable -->
+      <section class="deck-panel" data-deck hidden aria-labelledby="dk-heading">
+        <div class="now-browsing__top caps">
+          <span id="dk-heading">On the turntable</span>
+          <span data-deck-status></span>
+        </div>
+        <p class="now-browsing__meta caps" data-deck-meta></p>
+        <h2 class="now-browsing__title" data-deck-title></h2>
+        <ol class="needle-list" data-deck-tracks aria-label="Tracks: choose one to move the needle"></ol>
+        <div class="now-browsing__controls">
+          <button class="btn btn--solid" type="button" data-deck-open>
+            <span data-deck-open-label>Open the album</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          </button>
+          <button class="icon-btn" type="button" data-deck-pause aria-label="Lift the needle">
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+          </button>
+          <button class="icon-btn" type="button" data-deck-eject aria-label="Put the record back in the crate">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 5l7 8H5zM5 16h14v3H5z"/></svg>
+          </button>
+        </div>
+        <p class="deck-hint">
+          <span class="desktop-only"><strong>Drag the record</strong> to scratch it. Click a groove or a track to move the needle, or the tonearm to lift it. <kbd>Esc</kbd> puts it back.</span>
+          <span class="touch-only"><strong>Spin the record</strong> with your finger to scratch it. Tap a groove or a track to move the needle, or the tonearm to lift it.</span>
+        </p>
+      </section>
+
+      <nav class="album-nav-list" aria-label="All albums">
+        <ol class="album-list" id="albums" data-list></ol>
+      </nav>
+
+      <p class="home-hint">
+        <span class="desktop-only">Hover, scroll or use <kbd>←</kbd> <kbd>→</kbd> to flip through. Click the front album to put it on the turntable.</span>
+        <span class="touch-only">Swipe the crate or tap an album to flip through. Tap the front album to put it on the turntable.</span>
+      </p>
+    </div>
+
+    <!-- Sound on / off (remembered on this device) -->
+    <button class="sound-toggle caps" type="button" data-sound aria-pressed="true">
+      <span class="sound-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span data-sound-label>Sound on</span>
+    </button>
+
+    <!-- Shown instead of the crate when 3D isn't available -->
+    <div class="cover-grid" data-fallback hidden></div>
+  </main>
+
+  <div class="page-veil" data-veil></div>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

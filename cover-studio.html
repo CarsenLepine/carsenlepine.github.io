@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cover Studio · Four Points Design</title>
+  <meta name="description" content="Every album cover, with a PNG download.">
+  <meta name="theme-color" content="#131112">
+
+  <!-- Fonts: Instrument Serif from Google Fonts; Source Sans 3 is in assets/fonts (see style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<!-- Cover Studio: every cover (front and back), drawn by js/covers.js,
+     with Download PNG buttons. Not linked from the site's navigation:
+     open it yourself at cover-studio.html. -->
+<body class="page-studio theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-nav></header>
+  <main id="main" class="studio">
+    <div class="wrap">
+      <p class="caps" style="color: var(--silver)">Four Points Design · Tools</p>
+      <h1>Cover Studio</h1>
+      <p class="studio__intro">Every album cover, drawn from your renders. Download any of them as a 1024 × 1024 PNG (or a 3000 × 3000 print version). To change a cover's layout, image, or use your own file, edit <code>js/data/projects.js</code> (projects) or <code>js/data/site.js</code> (The Artist and Let's Chat).</p>
+      <div class="studio__grid" data-studio></div>
+    </div>
+  </main>
+  <div class="page-veil" data-veil></div>
+  <script type="module" src="js/cover-studio.js"></script>
+</body>
+</html>
