@@ -184,3 +184,38 @@ The download on The Artist page is **`assets/documents/resume.pdf`**. To update 
 - **The music:** each album always sounds the same (its melody is worked out from its `id`), and a new project without `sound` gets a lo-fi tune of its own automatically.
 - **Pages over the turntable:** when an album is opened from the turntable, its page is shown in a frame with `&embedded=1` added to its address (the address bar shows the normal address). You never need to type that yourself.
 - **Navigation without a mouse:** ← → (or scroll, or swipe) flips the crate; Enter plays the front album; Tab moves through the Play button and album list. With a record on the turntable: ← → change track, Space lifts the needle, Enter opens the album, Esc puts the record back. On any album page, Esc goes back to the collection (if the drawing viewer is open, Esc closes it first), and a "Top" button appears once you scroll down. In the drawing viewer: scroll or pinch to zoom, drag to move, ← → for the next drawing, + / − to zoom, 0 to fit, Esc to close.
+
+---
+
+## Publish on GitHub
+
+This folder is its own git repository (it is not part of the original site), so publishing it puts only the vinyl site online.
+
+1. **Make a GitHub account** at github.com (free), if you don't have one.
+2. **Create a new, empty repository** (the **+** at the top right → *New repository*).
+   - Name it **`yourusername.github.io`** (your exact GitHub username) to get the cleanest address, `https://yourusername.github.io/`. Any other name, e.g. `portfolio`, gives `https://yourusername.github.io/portfolio/`.
+   - Set it to **Public** (free GitHub Pages sites must be public).
+   - **Don't** tick "Add a README", ".gitignore" or "license": it must start empty.
+3. **Upload the site** (the first time, a GitHub sign-in window opens). In a terminal in this folder:
+
+   ```
+   git remote add origin https://github.com/yourusername/yourrepository.git
+   git push -u origin main
+   ```
+
+4. **Turn on GitHub Pages**: in the repository, *Settings* → *Pages* → *Build and deployment*: Source **Deploy from a branch**, Branch **main**, folder **/ (root)** → **Save**. After a minute or two the address appears at the top of that page.
+5. **Finish the link preview**: in `index.html`, `project.html`, `artist.html` and `chat.html`, change
+   `<meta property="og:image" content="assets/social-preview.jpg">` to the full address, e.g.
+   `content="https://yourusername.github.io/assets/social-preview.jpg"` (most apps need the full address to show the picture).
+
+**Updating the live site later:** save your changes, then in a terminal in this folder:
+
+```
+git add -A
+git commit -m "What I changed"
+git push
+```
+
+The live site updates a minute or two after each push.
+
+**Remember:** everything in this folder is public once published, including the résumé PDF (`assets/documents/resume.pdf`), your email and your phone number.
